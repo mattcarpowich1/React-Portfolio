@@ -1,2 +1,2 @@
 # React-Portfolio
-Hip React Portfolio Sight
+Built with ReactJS
