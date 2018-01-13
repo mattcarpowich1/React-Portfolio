@@ -1,2 +1,2 @@
 # React-Portfolio
-Hipster Portfolio Site Built with ReactJS
+Hip Portfolio Site Built with ReactJS
