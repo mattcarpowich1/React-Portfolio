@@ -8,9 +8,10 @@ import './Screen.css'
 
 const Screen = ({
  data,
- clickHandler }) => {
+ clickHandler 
+}) => {
 
-  let {
+  const {
     title,
     subtitle,
     pageColor,
@@ -18,41 +19,41 @@ const Screen = ({
     nextState
   } = data
 
+  const screenStyle = {
+    backgroundColor: `${pageColor}`
+  }
+
   return (
     <div id='screen' 
-      style={ { backgroundColor: `${pageColor}` } }>
+      style={ screenStyle }>
       <Links colorset={ linkColor } />
 
-      <Arrow direction='up'
-        axis='y' 
+      <Arrow direction='up' axis='y' 
         handler={ clickHandler }
         nextState={ nextState } />
 
       <MiddleRow>
-        <Arrow 
-          direction='left'
-          axis='x'
-          handler={ clickHandler }
+        <Arrow direction='left'
+          axis='x' handler={ clickHandler }
           nextState={ nextState } />
-        <Container>
 
+        <Container> 
           <ScreenMain title={ title }
             subtitle={ subtitle } />
-
         </Container>
-        <Arrow 
-          direction='right'
-          axis='x'
+        
+        <Arrow direction='right' axis='x' 
           handler={ clickHandler }
           nextState={ nextState } />
       </MiddleRow>
 
-      <Arrow direction='down' 
-        axis='y'
+      <Arrow direction='down' axis='y' 
         handler={ clickHandler }
         nextState={ nextState } />
+
     </div>
   )
+  
 }
 
 export default Screen
