@@ -14,13 +14,9 @@ class App extends Component {
 
     const { screen, data } = this.state
 
-    return (
-      <div>
-        <Screen 
-          data={ data[screen] }
-        />
-      </div>
-    )
+    return <Screen 
+              data={ data[screen] }
+            />
 
   }
 }

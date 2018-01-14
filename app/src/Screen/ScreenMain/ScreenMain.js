@@ -6,6 +6,6 @@ export const ScreenMain = ({
   subtitle
 }) => 
   <div id='screen_main'>
-    <h1>{title}</h1>
-    <h4>{subtitle}</h4>
+    <h1>{ title }</h1>
+    <h4>{ subtitle }</h4>
   </div>
