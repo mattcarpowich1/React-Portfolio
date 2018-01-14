@@ -1,5 +1,5 @@
 .x-styles {
-  width: 5%;
+  width: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,9 +7,21 @@
 }
 
 .y-styles {
-  height: 5vh;
+  height: 8vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.fa {
+  font-size: calc(3.5vw + 3vh);
+}
+
+.fa:hover {
+  cursor: pointer;
+}
+
+.fa-chevron-up {
+  margin-top: -16px;
 }

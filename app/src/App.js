@@ -6,7 +6,7 @@ import './App.css'
 class App extends Component {
 
   state = {
-    screen: 0,
+    screen: 4,
     data: ScreenData
   }
 
@@ -19,6 +19,7 @@ class App extends Component {
             />
 
   }
+
 }
 
 export default App

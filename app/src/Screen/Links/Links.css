@@ -1,0 +1,15 @@
+#linkedin {
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+#git {
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 8px;
+  right: 48px;
+}

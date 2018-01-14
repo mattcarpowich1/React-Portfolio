@@ -1,4 +1,5 @@
 import React from 'react'
+import Links from './Links'
 import Arrow from './Arrow'
 import MiddleRow from './MiddleRow'
 import Container from './Container'
@@ -7,8 +8,10 @@ import './Screen.css'
 
 const Screen = ({ data }) => 
   <div id='screen'>
-    <Arrow direction='up'
-      axis='y' />
+    <Links colorset={ data.linkColor } />
+
+    <Arrow direction='up' axis='y' />
+
     <MiddleRow>
       <Arrow 
         direction='left'
@@ -23,8 +26,8 @@ const Screen = ({ data }) =>
         direction='right'
         axis='x' />
     </MiddleRow>
-    <Arrow direction='down'
-      axis='y' />
+
+    <Arrow direction='down' axis='y' />
   </div>
 
 export default Screen
