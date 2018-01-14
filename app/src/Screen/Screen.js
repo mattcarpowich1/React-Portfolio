@@ -6,28 +6,53 @@ import Container from './Container'
 import ScreenMain from './ScreenMain'
 import './Screen.css'
 
-const Screen = ({ data }) => 
-  <div id='screen'>
-    <Links colorset={ data.linkColor } />
+const Screen = ({
+ data,
+ clickHandler }) => {
 
-    <Arrow direction='up' axis='y' />
+  let {
+    title,
+    subtitle,
+    pageColor,
+    linkColor,
+    nextState
+  } = data
 
-    <MiddleRow>
-      <Arrow 
-        direction='left'
-        axis='x' />
-      <Container>
+  return (
+    <div id='screen' 
+      style={ { backgroundColor: `${pageColor}` } }>
+      <Links colorset={ linkColor } />
 
-        <ScreenMain title={ data.title }
-          subtitle={ data.subtitle } />
+      <Arrow direction='up'
+        axis='y' 
+        handler={ clickHandler }
+        nextState={ nextState } />
 
-      </Container>
-      <Arrow 
-        direction='right'
-        axis='x' />
-    </MiddleRow>
+      <MiddleRow>
+        <Arrow 
+          direction='left'
+          axis='x'
+          handler={ clickHandler }
+          nextState={ nextState } />
+        <Container>
 
-    <Arrow direction='down' axis='y' />
-  </div>
+          <ScreenMain title={ title }
+            subtitle={ subtitle } />
+
+        </Container>
+        <Arrow 
+          direction='right'
+          axis='x'
+          handler={ clickHandler }
+          nextState={ nextState } />
+      </MiddleRow>
+
+      <Arrow direction='down' 
+        axis='y'
+        handler={ clickHandler }
+        nextState={ nextState } />
+    </div>
+  )
+}
 
 export default Screen

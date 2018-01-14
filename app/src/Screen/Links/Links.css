@@ -1,15 +1,23 @@
-#linkedin {
-  height: 32px;
-  width: 32px;
+#links {
   position: absolute;
   top: 8px;
   right: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex end;
+  height: calc(4vw + 2.5vh);
 }
 
-#git {
-  height: 32px;
-  width: 32px;
-  position: absolute;
-  top: 8px;
-  right: 48px;
+#links a {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+#linkedin, #git {
+  height: 100%;
+  width: auto;
 }

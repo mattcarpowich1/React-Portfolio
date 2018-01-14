@@ -10,13 +10,25 @@ class App extends Component {
     data: ScreenData
   }
 
+  changeScreen = direction => {
+    const { screen } = this.state
+    const { nextState } = this.state.data[screen]
+    this.setState({
+      screen: nextState[direction] ||
+        nextState[direction] === 0 ?
+        nextState[direction] : screen
+    })
+  }
+
   render() {
 
     const { screen, data } = this.state
 
     return <Screen 
-              data={ data[screen] }
-            />
+            data={ data[screen] }
+            clickHandler={ direction =>
+              this.changeScreen(direction) } 
+            />  
 
   }
 
