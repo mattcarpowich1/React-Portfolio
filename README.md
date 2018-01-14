@@ -1,2 +1,2 @@
 # React-Portfolio
-Hip Portfolio Site Built with ReactJS
+Portfolio Site Built with ReactJS
