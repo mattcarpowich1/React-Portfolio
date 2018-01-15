@@ -5,13 +5,16 @@
   justify-content: center;
   align-items: center;
   position: absolute;
+  height: 74vh;
+  top: 13vh;
   transition: color .3s ease;
 }
 
 .exit {
   animation-name: exit;
-  animation-duration: .25s;
+  animation-duration: .2s;
   animation-timing-function: ease;
+  animation-iteration-count: 1;
 }
 
 @keyframes exit {
