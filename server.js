@@ -3,10 +3,10 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static('/build'));
+app.use(express.static(path.join(__dirname, 'app/build')));
 
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'app/build/index.html'));
 });
 
 app.listen(process.env.PORT ?
