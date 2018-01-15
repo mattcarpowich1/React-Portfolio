@@ -1,5 +1,5 @@
 #links {
-  position: absolute;
+  position: fixed;
   top: 2px;
   right: 8px;
   display: flex;
