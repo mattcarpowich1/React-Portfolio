@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 #background {
@@ -21,10 +22,26 @@
   z-index: -1;
 }
 
+.exit-done {
+  animation-name: exitDone;
+  animation-duration: .3s;
+  animation-timing-function: ease;
+}
+
+@keyframes exitDone {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .exit-up {
   animation-name: exitUp;
   animation-duration: .3s;
-  animation-timing-function: ease-out;
+  animation-timing-function: ease;
 }
 
 @keyframes exitUp {
@@ -40,7 +57,7 @@
 .exit-down {
   animation-name: exitDown;
   animation-duration: .3s;
-  animation-timing-function: ease-out;
+  animation-timing-function: ease;
 }
 
 @keyframes exitDown {
@@ -56,7 +73,7 @@
 .exit-left {
   animation-name: exitLeft;
   animation-duration: .3s;
-  animation-timing-function: ease-out;
+  animation-timing-function: ease;
 }
 
 @keyframes exitLeft {
@@ -72,7 +89,7 @@
 .exit-right {
   animation-name: exitRight;
   animation-duration: .3s;
-  animation-timing-function: ease-out;
+  animation-timing-function: ease;
 }
 
 @keyframes exitRight {

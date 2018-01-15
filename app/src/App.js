@@ -27,19 +27,19 @@ class App extends Component {
     const { 
       data, 
       screen, 
-      background,
-      leave } = this.state
+      background } = this.state
 
     const pageStyle = {
-      backgroundColor: `${ background }`
+      backgroundColor: `${ background }`,
+      zIndex: -2
     }
 
     return (
-      <div style={ pageStyle }>
+      <div id='app' 
+        style={ pageStyle }>
           <Screen 
-            alldata={ data }
+            allData={ data }
             data={ data[screen] }
-            leave = { leave }
             change={ direction =>
               this.changeScreen(direction) } 
             />  

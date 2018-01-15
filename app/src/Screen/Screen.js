@@ -10,96 +10,100 @@ import './Screen.css'
 class Screen extends Component { 
 
   state = {
-    leave: this.props.leave,
-    exitDirection: null,
-    background: "#FEFEFE"
+    exitDirection: '',
+    background: "#FEFEFE",
+    exit: false,
+    content: {
+      title: "Matt Carpowich",
+      subtitle: "REACTJS"
+    }
   }
 
   toggler = dir => {
     const { nextState } = this.props.data
     const screens = this.props.allData 
     const { change } = this.props
+    change(dir)
+    this.setState({
+      exitDirection: dir,
+      exit: true
+    })
     setTimeout(() => {
       this.setState({
         background: this.props.data.pageColor,
-        exitDirection: null
+        exitDirection: 'done',
+        content: screens[nextState[dir]].content,
+        exit: false
       })
     }, 300)
-    change(dir)
-    this.setState({
-      exitDirection: dir
-    })
   }
 
   render() {
-
-    const { 
-      clickHandler } = this.props
 
     const {
       title,
       subtitle,
       pageColor,
       linkColor,
+      textColor,
       nextState
     } = this.props.data
 
-    const { leave,
-     exitDirection,
-     background } = this.state
+    const { 
+      exit,
+      exitDirection,
+      background,
+      content } = this.state
 
     const screenStyle = {
       backgroundColor: `${ background }`
     }
 
     return (
-      // <CSSTransitionGroup
-      //   transitionName='transition'
-      //   transitionEnter={ leave }
-      //   transitionEnterTimeout={ 500 }
-      //   transitionAppear={ false }
-      //   transitionAppearTimeout={ 500 }
-      //   transitionLeaveTimeout={ 500 }
-      //   transitionLeave={ leave }>
+      <div>
+
+        <Links colorset={ linkColor } />
+
+        <Arrow direction='up' axis='y'
+          color={ linkColor }
+          toggler={ d => this.toggler(d) } 
+          nextState={ nextState } />
+
+        <Arrow direction='left' axis='x'
+          color={ linkColor }
+          toggler={ d => this.toggler(d) }  
+          nextState={ nextState } />
+
+        <Arrow direction='right' axis='x'
+          color={ linkColor } 
+          toggler={ d => this.toggler(d) }  
+          nextState={ nextState } />
+
+        <Arrow direction='down' axis='y'
+          color={ linkColor } 
+          toggler={ d => this.toggler(d) }  
+          nextState={ nextState } />
+
         <div id='screen'
-          className={`exit-${ exitDirection }`} 
+          className={exitDirection != 'done' ?
+            `exit-${ exitDirection }` : ''} 
           style={ screenStyle }
           key={ 1 }>
-          <Links colorset={ linkColor } />
 
-          <Arrow direction='up' axis='y'
-            toggler={ d => this.toggler(d) } 
-            handler={ clickHandler }
-            nextState={ nextState } />
+          <ScreenMain title={ content.title }
+            subtitle={ content.subtitle }
+            color={ textColor }
+            exit={ exit }
+            done={ this.state.exitDirection === 'done' ? true : false } />
 
           <MiddleRow>
-            <Arrow direction='left'
-              toggler={ d => this.toggler(d) } 
-              axis='x' 
-              handler={ clickHandler }
-              nextState={ nextState } />
-
-
-              <Container> 
-                <ScreenMain title={ title }
-                  subtitle={ subtitle } />
-              </Container>
-            
-            <Arrow direction='right' 
-              toggler={ d => this.toggler(d) } 
-              axis='x' 
-              handler={ clickHandler }
-              nextState={ nextState } />
+              <Container>              
+              </Container>  
           </MiddleRow>
 
-          <Arrow direction='down' 
-            toggler={ d => this.toggler(d) } 
-            axis='y' 
-            handler={ clickHandler }
-            nextState={ nextState } />
+        </div>   
 
-        </div>
-      // </CSSTransitionGroup>     
+      </div>
     )
 
   }

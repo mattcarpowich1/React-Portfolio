@@ -1,6 +1,9 @@
 html, body {
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
-  background-color: #FEFEFE;
   color: #232323;
+}
+
+#app {
+  transition: background-color .3s ease-out;
 }

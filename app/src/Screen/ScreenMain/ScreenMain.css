@@ -4,4 +4,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  transition: color .3s ease;
+}
+
+.exit {
+  animation-name: exit;
+  animation-duration: .25s;
+  animation-timing-function: ease;
+}
+
+@keyframes exit {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

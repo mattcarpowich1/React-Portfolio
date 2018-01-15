@@ -4,19 +4,20 @@ import './Arrow.css'
 export const Arrow = ({
   direction,
   axis,
-  handler,
+  color,
   nextState,
   toggler
 }) => 
   <div className={ `${ axis }-styles` }
     onClick={ e => {
       toggler(direction)
-      // handler(direction) } }>
     } }>
     {
       nextState[direction] ||
       nextState[direction] === 0 ? (
-        <i className={ `fa fa-chevron-${ direction }` } 
+        <i className={ 
+          `fa fa-chevron-${ direction } 
+          ${ direction } ${ color }`  } 
           aria-hidden='true'></i>
       ) : null
     }
