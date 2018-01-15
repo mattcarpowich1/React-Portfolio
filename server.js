@@ -9,7 +9,7 @@ app.get('*', (req, res) => {
   res.sendFile('index.html')
 });
 
-app.listen(5000, () => {
+app.listen(process.ENV.PORT || 5000, () => {
   console.log('Server listening on port 5000...')
 });
 
