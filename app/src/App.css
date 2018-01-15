@@ -1,5 +1,6 @@
 html, body {
-  -webkit-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   background-color: #FEFEFE;
   color: #232323;
 }
