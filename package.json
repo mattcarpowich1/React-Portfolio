@@ -1,0 +1,13 @@
+{
+  "name": "React-Portfolio",
+  "version": "1.0.0",
+  "description": "Peronal portfolio site demonstrating proficiency in ReactJS.",
+  "main": "server.js",
+  "repository": "https://github.com/mattcarpowich1/React-Portfolio.git",
+  "author": "Matt Carpowich",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}

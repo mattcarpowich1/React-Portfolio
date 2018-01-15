@@ -6,30 +6,45 @@ import './App.css'
 class App extends Component {
 
   state = {
+    data: ScreenData,
     screen: 4,
-    data: ScreenData
+    background: "#FEFEFE"
   }
 
   changeScreen = direction => {
-    const { screen } = this.state
-    const { nextState } = this.state.data[screen]
+    const { screen, data } = this.state
+    const { nextState, pageColor } = this.state.data[screen]
     this.setState({
       screen: nextState[direction] ||
         nextState[direction] === 0 ?
-        nextState[direction] : screen
+        nextState[direction] : screen,
+      background: data[nextState[direction]].pageColor
     })
   }
 
   render() {
 
-    const { screen, data } = this.state
+    const { 
+      data, 
+      screen, 
+      background,
+      leave } = this.state
 
-    return <Screen 
+    const pageStyle = {
+      backgroundColor: `${ background }`
+    }
+
+    return (
+      <div style={ pageStyle }>
+          <Screen 
+            alldata={ data }
             data={ data[screen] }
-            clickHandler={ direction =>
+            leave = { leave }
+            change={ direction =>
               this.changeScreen(direction) } 
             />  
-
+      </div>
+    )
   }
 
 }

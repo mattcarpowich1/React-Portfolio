@@ -5,10 +5,14 @@ export const Arrow = ({
   direction,
   axis,
   handler,
-  nextState
+  nextState,
+  toggler
 }) => 
   <div className={ `${ axis }-styles` }
-    onClick={ e => handler(direction) } >
+    onClick={ e => {
+      toggler(direction)
+      // handler(direction) } }>
+    } }>
     {
       nextState[direction] ||
       nextState[direction] === 0 ? (
