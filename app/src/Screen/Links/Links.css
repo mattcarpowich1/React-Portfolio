@@ -20,3 +20,43 @@
   height: 48px;
   width: auto;
 }
+
+.spin-X {
+  animation-name: spinnerX;
+  animation-duration: .3s;
+  animation-timing-function: ease;
+}
+
+.spin-Y {
+  animation-name: spinnerY;
+  animation-duration: .3s;
+  animation-timing-function: ease;
+}
+
+@keyframes spinnerX {
+  0% {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes spinnerY {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}

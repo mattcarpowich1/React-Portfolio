@@ -6,7 +6,9 @@
   align-items: center;
   position: absolute;
   height: 74vh;
+  width: 74%;
   top: 13vh;
+  left: 13%;
   transition: color .3s ease;
 }
 

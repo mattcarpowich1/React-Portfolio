@@ -26,14 +26,16 @@ class Screen extends Component {
     change(dir)
     this.setState({
       exitDirection: dir,
-      exit: true
+      exit: true,
+      spin: true
     })
     setTimeout(() => {
       this.setState({
         background: this.props.data.pageColor,
         exitDirection: 'done',
         content: screens[nextState[dir]].content,
-        exit: false
+        exit: false,
+        spin: false
       })
     }, 275)
   }
@@ -53,7 +55,8 @@ class Screen extends Component {
       exit,
       exitDirection,
       background,
-      content } = this.state
+      content,
+      spin } = this.state
 
     const screenStyle = {
       backgroundColor: `${ background }`
@@ -62,7 +65,11 @@ class Screen extends Component {
     return (
       <div>
 
-        <Links colorset={ linkColor } />
+        <Links spin={ spin }
+          spinDirection={ exitDirection === 'up' ||
+            exitDirection === 'down' ? 'Y' : 'X' }
+          colorset={ linkColor }
+          />
 
         <Arrow direction='up' axis='y'
           color={ linkColor }
@@ -94,7 +101,7 @@ class Screen extends Component {
             subtitle={ content.subtitle }
             color={ textColor }
             exit={ exit }
-            done={ this.state.exitDirection === 'done' ? true : false } />
+            done={ exitDirection === 'done' ? true : false } />
 
           <MiddleRow>
               <Container>              
