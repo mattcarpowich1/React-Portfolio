@@ -35,7 +35,7 @@ class Screen extends Component {
         content: screens[nextState[dir]].content,
         exit: false
       })
-    }, 300)
+    }, 275)
   }
 
   render() {
