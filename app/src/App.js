@@ -24,6 +24,13 @@ class App extends Component {
 
   render() {
 
+    window.onload = () => {
+      setTimeout(() => {
+        console.log("hello")
+        window.scrollTo(0, 1)
+      }, 0)
+    }
+
     const { 
       data, 
       screen, 
